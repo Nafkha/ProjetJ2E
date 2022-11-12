@@ -21,7 +21,9 @@ public class PersonneUtils {
 
         }catch (SQLException e){
             out.println("Erreur d'ajout personne");
-            e.printStackTrace();
+            if(e.getErrorCode()==1062){
+                System.out.println("Cette CIN existe déja dans la base");
+            }
 
         }
     }

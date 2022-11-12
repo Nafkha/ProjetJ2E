@@ -1,8 +1,10 @@
 package com.projetj2e.projetj2e;
 
+import com.projetj2e.projetj2e.beans.Enseignant;
 import com.projetj2e.projetj2e.beans.Personne;
 import com.projetj2e.projetj2e.conn.DBUtils;
 import com.projetj2e.projetj2e.conn.MyUtils;
+import com.projetj2e.projetj2e.conn.dbutils.EnseignantUtils;
 import com.projetj2e.projetj2e.conn.dbutils.PersonneUtils;
 
 import java.io.*;
@@ -29,15 +31,9 @@ public class HelloServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Connection con = MyUtils.getStoredConnection(req);
-        ResultSet rs = PersonneUtils.fetchPersonnes(con);
-        try{
-            while (rs.next()){
-                System.out.println(rs.getString(2));
-            }
-
-        }catch (SQLException e){
-            e.printStackTrace();
-        }
+        Enseignant e = new Enseignant(123,"Nafkha","Mohamed Youssef","Nafkha.m.youssef@gmail.com",
+                "m","1998-05-20",123) ;
+        EnseignantUtils.insertEnseignant(con,e);
 
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/");
         rd.forward(req, resp);
