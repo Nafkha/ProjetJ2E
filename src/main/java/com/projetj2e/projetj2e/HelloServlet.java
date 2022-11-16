@@ -1,11 +1,9 @@
 package com.projetj2e.projetj2e;
 
-import com.projetj2e.projetj2e.beans.Enseignant;
-import com.projetj2e.projetj2e.beans.Personne;
+import com.projetj2e.projetj2e.beans.*;
 import com.projetj2e.projetj2e.conn.DBUtils;
 import com.projetj2e.projetj2e.conn.MyUtils;
-import com.projetj2e.projetj2e.conn.dbutils.EnseignantUtils;
-import com.projetj2e.projetj2e.conn.dbutils.PersonneUtils;
+import com.projetj2e.projetj2e.conn.dbutils.*;
 
 import java.io.*;
 import java.sql.Connection;
@@ -33,8 +31,16 @@ public class HelloServlet extends HttpServlet {
         Connection con = MyUtils.getStoredConnection(req);
         Enseignant e = new Enseignant(123,"Nafkha","Mohamed Youssef","Nafkha.m.youssef@gmail.com",
                 "m","1998-05-20",123) ;
+        Etudiant et = new Etudiant(634,"Bennour","Mohamed","b.mohamed@pi.tn","M","1998-05-20",
+                21224,"123","2022",1);
         EnseignantUtils.insertEnseignant(con,e);
-
+        Groupe g = new Groupe("123","1ere","IRM","BDBI",1);
+        GroupeUtils.insertGroupe(con,g);
+        GroupeModule gm  = new GroupeModule("123","Math",3.5,"123");
+        GroupeModuleUtils.insertGroupeModule(con,gm);
+        Matiere m = new Matiere("123","IA",3.5,123,"123",3);
+        MatiereUtils.insertMatiere(con,m);
+        EtudiantUtils.insertEtudiant(con,et);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/");
         rd.forward(req, resp);
     }
