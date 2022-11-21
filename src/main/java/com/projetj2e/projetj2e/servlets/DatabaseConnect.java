@@ -1,7 +1,5 @@
 package com.projetj2e.projetj2e.servlets;
 
-import com.projetj2e.projetj2e.beans.DatabaseConnection;
-
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;

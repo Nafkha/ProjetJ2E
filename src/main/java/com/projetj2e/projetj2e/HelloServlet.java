@@ -39,8 +39,10 @@ public class HelloServlet extends HttpServlet {
         GroupeModule gm  = new GroupeModule("123","Math",3.5,"123");
         GroupeModuleUtils.insertGroupeModule(con,gm);
         Matiere m = new Matiere("123","IA",3.5,123,"123",3);
+        Note n = new Note("123",21224,20.0,"DS");
         MatiereUtils.insertMatiere(con,m);
         EtudiantUtils.insertEtudiant(con,et);
+        NoteUtils.insertNote(con, n);
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/");
         rd.forward(req, resp);
     }
