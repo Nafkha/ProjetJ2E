@@ -22,5 +22,10 @@ public class GroupeUtils {
         }
 
     }
+    public  static void deleteGroupe(Connection con, String idGroupe)throws SQLException{
+        PreparedStatement pstmt = con.prepareStatement("DELETE FROM GROUPE WHERE idGrp= ?");
+        pstmt.setString(1,idGroupe);
+        pstmt.execute();
+    }
 
 }

@@ -14,8 +14,18 @@ public class Etudiant extends Personne  {
         this.numGrp = numGrp;
     }
 
+    public Etudiant(String nom, String prenom, String mail, int numInsc, String grp) {
+        super(nom, prenom, mail);
+        this.numInsc = numInsc;
+        this.grp = grp;
+    }
+
+
     public int getNumInsc() {
         return numInsc;
+    }
+
+    public Etudiant() {
     }
 
     public String getGrp() {
@@ -28,5 +38,13 @@ public class Etudiant extends Personne  {
 
     public int getNumGrp() {
         return numGrp;
+    }
+
+    public void setNumInsc(int numInsc) {
+        this.numInsc = numInsc;
+    }
+
+    public void setGrp(String grp) {
+        this.grp = grp;
     }
 }

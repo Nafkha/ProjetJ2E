@@ -9,7 +9,7 @@
 <style><%@include file="/inc/css/style.css"%></style>
 <div class="sidebar">
 
-   <img src="../inc/Logo-Pi-RVB.png" class="logo" alt="logopi">
+   <img src="${pageContext.request.contextPath}/inc/Logo-Pi-RVB.png" class="logo" alt="logopi">
    <ul>
       <li><a href="${pageContext.request.contextPath}/Dashboard/Etudiants.jsp">Etudiants</a> </li>
       <li><a href="${pageContext.request.contextPath}/Dashboard/Enseigngants.jsp">Enseignants</a> </li>

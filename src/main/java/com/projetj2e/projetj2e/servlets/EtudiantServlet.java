@@ -69,6 +69,8 @@ public class EtudiantServlet extends HttpServlet {
         Etudiant e = new Etudiant(Integer.parseInt(cin),nom,prenom,mail,sexe,date_naissance
         ,Integer.parseInt(num_insc),groupe,Integer.toString(year),1);
         EtudiantUtils.insertEtudiant(conn,e);
+        response.sendRedirect(request.getContextPath() + "/Dashboard/Etudiants.jsp" );
+
 
     }
 }

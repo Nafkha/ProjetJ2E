@@ -20,4 +20,9 @@ public class GroupeModuleUtils {
             e.printStackTrace();
         }
     }
+    public static void deleteGroupeModule(Connection con, String id)throws SQLException{
+        PreparedStatement pstmt = con.prepareStatement("DELETE FROM GROUPEMODULE WHERE idGM=? ");
+        pstmt.setString(1,id);
+        pstmt.execute();
+    }
 }

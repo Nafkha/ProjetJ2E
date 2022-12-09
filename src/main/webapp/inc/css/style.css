@@ -66,14 +66,14 @@ ul li a{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-left: 40px;
+    margin-left: 10px;
 }
 .form_container select{
-    width: 300px;
+    width: 250px;
     margin-top: 10px;
     margin-bottom: 10px;
     border-radius: 30px;
-    height: 50px;
+    height: 35px;
     padding-left: 20px;
 
 }
@@ -94,7 +94,7 @@ ul li a{
     color: white;
 }
 .form_container input{
-    width: 300px;
+    width: 250px;
     border-radius: 30px;
     background-color: white;
     height: 35px;
@@ -134,4 +134,12 @@ h3{
     margin-left: 15px;
     font-weight: 300;
     font-size: 1.5rem;
+}
+.information_etudiant{
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+}
+.information_etudiant span{
+    font-size: 1.2rem;
 }

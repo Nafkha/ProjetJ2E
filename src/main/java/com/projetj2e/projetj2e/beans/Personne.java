@@ -13,6 +13,15 @@ public class Personne {
         this.date_naissance = date_naissance;
     }
 
+    public Personne(String nom, String prenom, String mail) {
+        this.nom = nom;
+        this.prenom = prenom;
+        this.mail = mail;
+    }
+
+    public Personne() {
+    }
+
     public int getCin() {
         return cin;
     }
@@ -35,5 +44,17 @@ public class Personne {
 
     public String getDate_naissance() {
         return date_naissance;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
     }
 }

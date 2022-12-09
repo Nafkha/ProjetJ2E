@@ -12,28 +12,26 @@
     Connection conn = MyUtils.getStoredConnection(request);
     try{
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(" select e.num_insc,p.nom,p.prenom,p.mail,p.id,e.grp from etudiant e join personne p on p.id = e.id ");
+        ResultSet rs = stmt.executeQuery(" select idGrp,niveau,diplome,specialite,num_g from groupe ");
 %>
 
 <table>
     <tr>
-        <th>Numero Inscription</th>
-        <th>Nom</th>
-        <th>Prenom</th>
-        <th>Email</th>
-        <th>Groupe</th>
-        <th></th>
+        <th>ID</th>
+        <th>Niveau</th>
+        <th>Diplome</th>
+        <th>Specialité</th>
+        <th>Numéro Groupe</th>
         <th></th>
     </tr>
     <% while (rs.next()){%>
     <tr>
-        <td><%=rs.getInt(1)%></td>
+        <td><%=rs.getString(1)%></td>
         <td><%=rs.getString(2)%></td>
         <td><%=rs.getString(3)%></td>
         <td><%=rs.getString(4)%></td>
-        <td><%=rs.getString(6)%></td>
-        <td><a href="${pageContext.request.contextPath}/deleteEtudiant?code=<%=rs.getInt(5)%>">Supprimer</td>
-        <td><a href="${pageContext.request.contextPath}/modifierEtudiant?code=<%=rs.getInt(1)%>">Modifier</td>
+        <td><%=rs.getInt(5)%></td>
+        <td><a href="${pageContext.request.contextPath}/deleteGroupe?code=<%=rs.getString(1)%>">Supprimer</td>
     </tr>
     <%}%>
 </table>

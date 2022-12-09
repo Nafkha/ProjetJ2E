@@ -36,6 +36,8 @@ public class EnseignantServlet extends HttpServlet {
                 .parseInt(cnss));
 
         EnseignantUtils.insertEnseignant(conn,e);
+        response.sendRedirect(request.getContextPath() + "/Dashboard/Enseigngants.jsp" );
+
 
     }
 }

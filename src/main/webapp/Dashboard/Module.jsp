@@ -13,5 +13,6 @@
 <div class="page_container">
   <jsp:include page="/WEB-INF/sidebar.jsp"/>
   <jsp:include page="/WEB-INF/moduleForm.jsp"/>
+  <jsp:include page="/WEB-INF/listModule.jsp"/>
 
 </div>

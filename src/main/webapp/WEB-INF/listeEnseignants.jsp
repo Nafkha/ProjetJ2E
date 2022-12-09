@@ -12,7 +12,7 @@
     Connection conn = MyUtils.getStoredConnection(request);
     try{
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery(" select e.cnss,p.nom,p.prenom,p.mail from enseignant e join personne p on p.id = e.id ");
+        ResultSet rs = stmt.executeQuery(" select e.cnss,p.nom,p.prenom,p.mail,p.id from enseignant e join personne p on p.id = e.id ");
 %>
 
 <table>
@@ -30,7 +30,7 @@
         <td><%=rs.getString(2)%></td>
         <td><%=rs.getString(3)%></td>
         <td><%=rs.getString(4)%></td>
-        <td><a href="#">Supprimer</td>
+        <td><a href="${pageContext.request.contextPath}/deleteEtudiant?code=<%=rs.getInt(5)%>">Supprimer</td>
         <td><a href="#">Modifier</td>
     </tr>
     <%}%>

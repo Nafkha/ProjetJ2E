@@ -38,5 +38,7 @@ public class ModuleServlet extends HttpServlet {
         GroupeModule gm = new GroupeModule(id_module,nom_module,0,groupe);
         Connection conn = MyUtils.getStoredConnection(request);
         GroupeModuleUtils.insertGroupeModule(conn,gm);
+        response.sendRedirect(request.getContextPath() + "/Dashboard/Module.jsp" );
+
     }
 }
