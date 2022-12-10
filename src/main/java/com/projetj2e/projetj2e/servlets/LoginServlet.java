@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
             HttpSession session = request.getSession();
             MyUtils.storeLoginedUser(session,user);
             System.out.println("Succccesss");
-            response.sendRedirect(request.getContextPath() + "/userInfo");
+            response.sendRedirect(request.getContextPath() + "/Dashboard/Groupe.jsp");
 
         }
     }

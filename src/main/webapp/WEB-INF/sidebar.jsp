@@ -16,6 +16,7 @@
       <li><a href="${pageContext.request.contextPath}/Dashboard/Matieres.jsp">Matieres</a> </li>
       <li><a href="${pageContext.request.contextPath}/Dashboard/Module.jsp">Modules</a> </li>
       <li><a href="${pageContext.request.contextPath}/Dashboard/Groupe.jsp">Groupe</a> </li>
+      <li><a href="${pageContext.request.contextPath}/Dashboard/Notes.jsp">Notes</a> </li>
    </ul>
 
 

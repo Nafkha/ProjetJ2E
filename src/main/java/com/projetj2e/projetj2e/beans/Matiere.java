@@ -8,6 +8,33 @@ public class Matiere {
     private String gm;
     private int nbnotes;
 
+    public Matiere() {
+    }
+
+    public void setIdMat(String idMat) {
+        this.idMat = idMat;
+    }
+
+    public void setNomMat(String nomMat) {
+        this.nomMat = nomMat;
+    }
+
+    public void setCoef(double coef) {
+        this.coef = coef;
+    }
+
+    public void setEns(int ens) {
+        this.ens = ens;
+    }
+
+    public void setGm(String gm) {
+        this.gm = gm;
+    }
+
+    public void setNbnotes(int nbnotes) {
+        this.nbnotes = nbnotes;
+    }
+
     public Matiere(String idMat, String nomMat, double coef, int ens, String gm, int nbnotes) {
         this.idMat = idMat;
         this.nomMat = nomMat;

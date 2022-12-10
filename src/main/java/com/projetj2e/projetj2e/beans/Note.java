@@ -6,6 +6,9 @@ public class Note {
     private double Note;
     private String Type;
 
+    public Note() {
+    }
+
     public Note(String mat, int etu, double note, String type) {
         Mat = mat;
         Etu = etu;
@@ -27,5 +30,21 @@ public class Note {
 
     public String getType() {
         return Type;
+    }
+
+    public void setMat(String mat) {
+        Mat = mat;
+    }
+
+    public void setEtu(int etu) {
+        Etu = etu;
+    }
+
+    public void setNote(double note) {
+        Note = note;
+    }
+
+    public void setType(String type) {
+        Type = type;
     }
 }

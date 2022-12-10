@@ -43,13 +43,13 @@
             try {
                 Statement stmt = conn.createStatement();
                 ResultSet rs = stmt.executeQuery("select p.nom,p.prenom, e.cnss from personne p join enseignant e on p.id = e.id");
-                while (rs.next()){
         %>
         <select name="enseignant">
+            <%                 while (rs.next()){%>
             <option value="<%=rs.getInt(3)%>"><%= rs.getString(1) + " "+rs.getString(2)%></option>
-
+            <%}%>
         </select>
-        <%}}catch (SQLException e){e.printStackTrace();}%>
+        <%}catch (SQLException e){e.printStackTrace();}%>
 
 
         <input type="submit" value="Ajouter Matiere">

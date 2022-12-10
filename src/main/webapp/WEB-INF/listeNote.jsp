@@ -12,29 +12,26 @@
     Connection conn = MyUtils.getStoredConnection(request);
     try{
         Statement stmt = conn.createStatement();
-        ResultSet rs = stmt.executeQuery("select m.idMat,m.nomMat,m.coef, m.gm , p.nom, p.prenom from matiere m " +
-                "join enseignant e on m.ens = e.cnss join personne p on p.id = e.id");
+        ResultSet rs = stmt.executeQuery("select * from note");
 %>
 
 <table>
     <tr>
-        <th>ID</th>
+        <th>Code Etudiant</th>
         <th>Nom Matiere</th>
-        <th>Coeffecient</th>
-        <th>Module</th>
-        <th>Enseignant</th>
+        <th>Note</th>
+        <th>Type</th>
         <th></th>
         <th></th>
     </tr>
     <% while (rs.next()){%>
     <tr>
+        <td><%=rs.getInt(2)%></td>
         <td><%=rs.getString(1)%></td>
-        <td><%=rs.getString(2)%></td>
         <td><%=rs.getDouble(3)%></td>
         <td><%=rs.getString(4)%></td>
-        <td><%=rs.getString(5) + " " + rs.getString(6)%></td>
-        <td><a href="${pageContext.request.contextPath}/deleteMatiere?code=<%=rs.getString(1)%>">Supprimer</td>
-        <td><a href="${pageContext.request.contextPath}/changerCoefMatiere?code=<%=rs.getString(1)%>">Modifier</td>
+        <td><a href="${pageContext.request.contextPath}/deleteNote?code=<%=rs.getString(1)%>&etu=<%=rs.getInt(2)%>&type=<%=rs.getString(4)%>">Supprimer</td>
+        <td><a href="${pageContext.request.contextPath}/modifierNote?code=<%=rs.getString(1)%>&etu=<%=rs.getInt(2)%>&type=<%=rs.getString(4)%>">Modifier</td>
     </tr>
     <%}%>
 </table>

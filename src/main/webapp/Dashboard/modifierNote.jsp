@@ -11,5 +11,5 @@
 </head>
 <div class="page_container">
   <jsp:include page="/WEB-INF/sidebar.jsp"/>
-  <jsp:include page="/WEB-INF/modifierMatiereForm.jsp"/>
+  <jsp:include page="/WEB-INF/modifierNoteForm.jsp"/>
 </div>
